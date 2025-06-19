@@ -8,7 +8,7 @@ class Config(object):
     API_HASH = ""
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 6079943111 # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    
+
     SUPPORT_CHAT = "AlonesHeaven"  # Your own group for support, do not add the @
     START_IMG = ""
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
@@ -39,7 +39,7 @@ class Config(object):
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
     WORKERS = 8
-    
+
 
 class Production(Config):
     LOGGER = True

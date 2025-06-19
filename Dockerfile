@@ -1,9 +1,7 @@
-# We're using Debian Slim Buster image
-FROM python:3.8.5-slim-buster
+FROM python:3.12-slim-bullseye
 
 ENV PIP_NO_CACHE_DIR 1
 
-RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
 # Installing Required Packages
 RUN apt update && apt upgrade -y && \
@@ -64,11 +62,10 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-RUN git clone https://github.com/Noob-Alone/AloneRobot /root/AloneRobot
+COPY . /root/AloneRobot
+
 WORKDIR /root/AloneRobot
 
-#Copy config file to /root/AloneRobot/AloneRobot
-COPY ./AloneRobot/config.py ./AloneRobot/config.py* /root/AloneRobot/AloneRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
