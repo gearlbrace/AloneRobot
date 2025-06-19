@@ -1,5 +1,4 @@
-# We're using Debian Slim Buster image
-FROM python:3.13-slim-bullseye
+FROM python:3.12-slim-bullseye
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -65,7 +64,6 @@ RUN pip3 install --upgrade pip setuptools
 
 COPY . /root/AloneRobot
 
-RUN git clone https://github.com/gearlbrace/AloneRobot /root/AloneRobot
 WORKDIR /root/AloneRobot
 
 
